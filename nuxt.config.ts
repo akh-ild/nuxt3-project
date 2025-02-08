@@ -14,4 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
   ],
+  routeRules: {
+    '/custom': { redirect: '/' }
+  }
 });
