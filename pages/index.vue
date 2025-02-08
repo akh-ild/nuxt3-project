@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useLazyFetch } from 'nuxt/app';
-import { toRaw } from 'vue';
+import { refreshNuxtData, useAsyncData, useLazyFetch } from 'nuxt/app';
 
   /* definePageMeta({
     middleware: 'auth',
@@ -12,8 +11,14 @@ import { toRaw } from 'vue';
   const store = useCounterStore();
   console.log('pinia store', store); */
 
-  const { data: products, pending } = await useLazyFetch('/api/products');
+  // const { data: products, pending } = await useLazyFetch('/api/products');
   // console.log(toRaw(products.value));
+
+  const { data: productCount, pending } = await useAsyncData('products', () =>
+    $fetch('/api/asyncProducts')
+  );
+
+  const refresh = () => refreshNuxtData('products');
 </script>
 
 <template>
@@ -23,5 +28,7 @@ import { toRaw } from 'vue';
   <IconsCat />
   <div>Counter: {{ count }}</div>
 
-  <p>{{ pending ? 'Loading...' : products }}</p>
+  <!-- <p>{{ pending ? 'Loading...' : products }}</p> -->
+  <p>{{ pending ? 'Loading...' : productCount }}</p>
+  <button @click="refresh">Refresh</button>
 </template>
