@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Apple Watch",
+    "price": 299.99,
+    "description": "Stay connected and on top of your fitness goals with the latest Apple Watch",
+    "image": "https://i.imgur.com/UXWifDv.jpeg"
+  },
+  {
+    "name": "Samsung TV",
+    "price": 999.99,
+    "description": "Experience stunning 4K resolution and sleek design with the latest Samsung TV",
+    "image": "https://i.imgur.com/jkYDovR.jpeg"
+  },
+  {
+    "name": "Nike Running Shoes",
+    "price": 129.99,
+    "description": "Take your running game to the next level with the latest Nike Running Shoes",
+    "image": "https://i.imgur.com/RdxtKFs.jpeg"
+  },
+  {
+    "name": "Sony Headphones",
+    "price": 149.99,
+    "description": "Immerse yourself in crystal-clear sound with the latest Sony Headphones",
+    "image": "https://i.imgur.com/5Y2kKUh.jpeg"
+  },
+  {
+    "name": "Dell Laptop",
+    "price": 799.99,
+    "description": "Stay productive on the go with the latest Dell Laptop",
+    "image": "https://i.imgur.com/StquKsh.jpeg"
+  },
+  {
+    "name": "Canon Camera",
+    "price": 599.99,
+    "description": "Capture life's moments with stunning clarity with the latest Canon Camera",
+    "image": "https://i.imgur.com/aqRLsDY.jpeg"
+  }
+]
