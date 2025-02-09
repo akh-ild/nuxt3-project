@@ -9,5 +9,8 @@
         <li>
           <NuxtLink to="/events">Events</NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/custom">Custom</NuxtLink>
+        </li>
     </header>
 </template>

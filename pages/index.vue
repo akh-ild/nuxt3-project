@@ -1,5 +1,24 @@
 <script setup lang="ts">
-import { refreshNuxtData, useAsyncData, useLazyFetch } from 'nuxt/app';
+  import { refreshNuxtData, useAsyncData, useHead, useLazyFetch } from 'nuxt/app';
+
+  useHead({
+    title: 'Nuxt3 app',
+    meta: [
+      {
+        name: 'description',
+        content: 'This is index page',
+      },
+      {
+        name: 'keywords',
+        content: 'Nuxt.js 3, vue3, scss, tailwind, middleware, pinia',
+      },
+    ],
+    script: [
+      {
+        children: 'console.log("index page")',
+      }
+    ],
+  });
 
   /* definePageMeta({
     middleware: 'auth',
