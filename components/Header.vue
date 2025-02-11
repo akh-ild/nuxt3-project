@@ -12,5 +12,8 @@
         <li>
           <NuxtLink to="/custom">Custom</NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/tailwind">Tailwind</NuxtLink>
+        </li>
     </header>
 </template>
