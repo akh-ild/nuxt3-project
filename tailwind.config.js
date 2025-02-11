@@ -21,6 +21,10 @@ export default {
           900: '#434252',
         },
       },
+      fontSize: {
+        base: '18px',
+      },
+
     },
   },
 }
