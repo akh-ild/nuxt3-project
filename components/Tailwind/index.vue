@@ -3,7 +3,7 @@
 
 <template>
   <div class="index">
-    <div class="bg-[#bada55] text-white border-8 border-yellow-400">
+    <div class="bg-[#bada55] text-white border-8 border-yellow-400 pl-2 py-2">
     Hello world
   </div>
   <div class="text-customColor-100">

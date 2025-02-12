@@ -24,7 +24,12 @@ export default {
       fontSize: {
         base: '18px',
       },
-
+      spacing: {
+        8: '80px',
+      },
+      height: {
+        10: '100px',
+      },
     },
   },
 }
