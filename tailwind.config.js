@@ -1,5 +1,8 @@
 export default {
   theme: {
+    container: {
+      center: true,
+    },
     screens: {
       sm: '480px', // @media (min-width: 480px) { ... }
       md: '768px',
