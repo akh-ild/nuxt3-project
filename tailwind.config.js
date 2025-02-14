@@ -33,6 +33,9 @@ export default {
       height: {
         10: '100px',
       },
+      width: {
+        50: '500px',
+      },
     },
   },
 }
