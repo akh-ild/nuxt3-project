@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-tailwind w-screen h-screen">
+  <div class="layout-tailwind w-screen h-screen dark">
     <Header />
     <slot />
   </div>

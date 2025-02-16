@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="page-tailwind pt-8">
+  <div class="page-tailwind pt-8 dark:bg-slate-900">
     <Tailwind v-if="false" class="tailwind mb-5" />
     <TailwindTypography class="typography mb-5" />
     <TailwindFlex v-if="false" class="flex mb-5" />
