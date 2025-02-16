@@ -3,14 +3,31 @@
 
 <template>
   <div>
-    <h1 class="text-3xl italic">Title 1</h1>
-    <h2 class="text-2xl leading-loose underline decoration-red-800 decoration-wavy decoration-5 underline-offset-5">Title 2</h2>
-    <h3 class="text-xl -mt-5">Title 3</h3>
-    <p class="text-base">A regular paragraph</p>
-    <p class="text-sm">A description paragraph</p>
-    <p class="note text-xs">A little note</p>
-    <div style="width: 200px">
-      <p class="truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h1>Title 1</h1>
+    <h2>Title 2</h2>
+    <p class="">A regular paragraph</p>
+    <a href="/">Anchor</a>
+    <div class="mt-2">
+      <button class="btn btn-primary">Button</button>
+    </div>
+    <div class="mt-2">
+      <button disabled class="btn btn-secondary">Button</button>
+    </div>
+    <div class="mt-2">
+      <input type="text" placeholder="input" />
+    </div>
+    <div class="mt-2">
+      <input type="date" />
+    </div>
+    <div class="flex items-start mt-2">
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox">Checkbox</label>
+    </div>
+    <div class="mt-2">
+      <select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+      </select>
     </div>
   </div>
 </template>
