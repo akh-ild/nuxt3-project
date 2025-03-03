@@ -1,6 +1,9 @@
 <template>
-  <div class="layout-default">
-    <slot />
+  <div class="layout-default grid items-start">
+    <LayoutSidebar />
+    <div>
+      <slot />
+    </div>
   </div>
 </template>
 
