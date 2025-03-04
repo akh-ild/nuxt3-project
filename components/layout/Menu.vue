@@ -36,10 +36,10 @@
     </header>
     <div class="px-4 grow">
       <div class="grid gap-2">
-        <div v-for="item in items" :key="item.title" class="flex items-center gap-2 px-2 py-1 transition roudeed cursor-pointer hover:bg-neutral-100">
+        <NuxtLink v-for="item in items" :key="item.title" :href="item.path" class="flex items-center gap-2 px-2 py-1 transition roudeed cursor-pointer hover:bg-neutral-100">
           <Icon size="20" :name="item.icon" color="black" />
           <span>{{ item.title }}</span>
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </div>

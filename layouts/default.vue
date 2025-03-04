@@ -1,8 +1,10 @@
 <template>
   <div class="layout-default grid items-start">
-    <LayoutSidebar />
-    <div>
-      <slot />
+    <div class="grid items-start lg:flex">
+      <LayoutSidebar />
+      <div class="w-full p-4">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
