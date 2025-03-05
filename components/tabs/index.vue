@@ -34,7 +34,7 @@
 
 <template>
   <div>
-    <div class="tabs flex gap-1 p-1 bg-slate-200 rounded-lg w-[400px]">
+    <div class="tabs flex gap-1 mb-4 p-1 bg-slate-200 rounded-lg w-[400px]">
       <TabsTrigger v-for="tab in tabs" :key="tab.id" :class="{ 'bg-white': tab.id === activeTabId }" @click="activateTab(tab.id)">
         {{ tab.title }}
       </TabsTrigger>

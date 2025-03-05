@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     'nuxt-icon',
+    'nuxt-highcharts',
   ],
   routeRules: {
     // '/custom': { redirect: '/' }
