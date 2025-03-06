@@ -1,4 +1,5 @@
 <script setup>
+  const { cards } = useCards();
 </script>
 
 <template>
@@ -12,17 +13,9 @@
     </header>
     <main class="grid gap-4">
       <Tabs class="tabs" />
-      <!-- <div class="flex items-center gap-4">
-        <div v-for="(item, index) in 3" :key="index" class="w-[120px] h-[36px] bg-neutral-200"></div>
-      </div>
-      <section>
-        <div class="w-full h-[360px] bg-neutral-200"></div>
-      </section> -->
     </main>
-    <footer>
-      <div class="flex items-center gap-4">
-        <div v-for="(item, index) in 3" :key="index" class="w-full h-[260px] bg-neutral-200"></div>
-      </div>
+    <footer class="lg:flex lg:items-center lg:justify-between gap-1">
+      <UiCard v-for="(item, index) in cards" :key="index" :card="item" />
     </footer>
   </div>
 </template>

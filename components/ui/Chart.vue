@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="border p-4 rounded-lg">
     <highchart :options="chartOptions" class="w-full" />
   </div>
 </template>
