@@ -14,7 +14,7 @@
     <main class="grid gap-4">
       <Tabs class="tabs" />
     </main>
-    <footer class="lg:flex lg:items-center lg:justify-between gap-1">
+    <footer class="max-w-[1200px] lg:flex lg:items-center lg:justify-between gap-1">
       <UiCard v-for="(item, index) in cards" :key="index" :card="item" />
     </footer>
   </div>

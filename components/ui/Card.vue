@@ -4,6 +4,10 @@ const props = defineProps({
     type: Object,
     default: () => {},
   },
+  isForm: {
+    type: Boolean,
+    default: false
+  },
 })
 const options = [
     {
@@ -25,15 +29,17 @@ const options = [
 </script>
 
 <template>
-  <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-[350px]">
-    <div class="flex flex-col space-y-1.5 p-6">
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-[450px]">
+    <div class="flex justify-between p-6">
       <div class="title text-2xl font-semibold leading-none tracking-tight">
         {{ card.title }}
       </div>
-      <div class="subtitle text-sm text-muted-foreground">Subtitle</div>
+      <div class="subtitle text-sm text-muted-foreground">
+        {{ `$${card.amount}` }}
+      </div>
     </div>
     <div class="p-6 pt-0">
-      <form>
+      <form v-if="isForm">
         <div class="grid w-full items-center gap-4">
           <div class="flex flex-col space-y-1.5">
             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="name">
@@ -50,11 +56,14 @@ const options = [
         </div>
       </form>
     </div>
-    <div class="items-center p-6 pt-0 flex justify-between">
-      <UiButton type="primary">
-        Cancel
+    <div class="items-center px-6 py-3 flex justify-between border-t">
+      <div class="text-sm text-neutral-400">
+        {{ card.description }}
+      </div>
+      <UiButton v-if="card.label" type="primary">
+        {{ card.label }}
       </UiButton>
-      <UiButton type="secondary">
+      <UiButton v-if="false" type="secondary">
         Deploy
       </UiButton>
     </div>
