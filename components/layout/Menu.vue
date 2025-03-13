@@ -2,7 +2,7 @@
   const items = ref([
     {
       title: 'Overview',
-      path: '/overview',
+      path: '/',
       icon: 'ri:dashboard-line',
     },
     {

@@ -1,23 +1,16 @@
 [
   {
-    "title": "Sales",
+    "title": "Income",
     "amount": 1244.43,
-    "label": "View sales",
+    "label": "View incomes",
     "description": "Sales of March 2024",
     "icon": "solar:ticket-sales-outline"
   },
   {
-    "title": "Refunds",
+    "title": "Expenses",
     "amount": 84.44,
-    "label": "View refunds",
+    "label": "View expenses",
     "description": "Refunds since beginning of year",
     "icon": "heroicon-outline:receipt-refund"
-  },
-  {
-    "title": "Payouts",
-    "amount": 899.99,
-    "label": "View payouts",
-    "description": "Payouts of this week",
-    "icon": "tabler:zoom-money"
   }
 ]

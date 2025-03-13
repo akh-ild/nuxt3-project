@@ -5,6 +5,7 @@
       <div class="w-full p-4">
         <slot />
       </div>
+      <LayoutPopupTransaction />
     </div>
   </div>
 </template>

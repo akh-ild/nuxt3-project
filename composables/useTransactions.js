@@ -1,5 +1,5 @@
 import cards from '~/composables/cards.json';
-export const useCards = () => {;
+export const useTransactions = () => {;
   return {
     cards,
   };
