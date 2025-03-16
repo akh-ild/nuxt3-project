@@ -1,6 +1,6 @@
 <script setup>
-  const { cards } = useTransactions();
   const { setPopup } = usePopup();
+  const { transactions } = useTransactions();
 </script>
 
 <template>
@@ -19,7 +19,7 @@
       <Tabs class="tabs" />
     </main>
     <footer class="max-w-[1200px] lg:flex lg:items-center gap-1">
-      <UiCard v-for="(item, index) in cards" :key="index" :card="item" />
+      <UiCard v-for="(item, index) in transactions" :key="index" :card="item" />
     </footer>
   </div>
 </template>

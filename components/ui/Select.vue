@@ -1,13 +1,13 @@
 <script setup>
 const props = defineProps({
-    options: {
-      type: Array,
-      default: () => [],
-    },
-    modelValue: {
-      type: String,
-      default: '',
-    },
+  options: {
+    type: Array,
+    default: () => [],
+  },
+  modelValue: {
+    type: String,
+    default: '',
+  },
 });
 
 defineEmits(['update:modelValue']);

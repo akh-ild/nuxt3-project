@@ -1,48 +1,94 @@
-import cards from '~/composables/cards.json';
-
 import { onMounted, ref } from 'vue';
 
-const transactionName = ref('');
-const transactionAmount = ref(0);
+const transactionName = ref('Home');
+const transactionSum = ref(0);
 const transactionType = ref('expense');
+const options = [
+  {
+    id: 0,
+    value: 'Home',
+  },
+  {
+    id: 1,
+    value: 'Grocery',
+  },
+  {
+    id: 2,
+    value: 'Car',
+  },
+];
 
-const transactions = ref({
-  list: [],
-});
+const transactionsList = ref([]);
+
+const transactions = ref([
+  {
+    title: 'income',
+    list: [],
+    amount: 0,
+    label: 'View incomes',
+    icon: 'solar:ticket-sales-outline',
+  },
+  {
+    title: 'expense',
+    list: [],
+    amount: 0,
+    label: 'View expenses',
+    icon: 'heroicon-outline:receipt-refund',
+  },
+]);
 
 export const useTransactions = () => {
   onMounted(() => {
-    transactions.value.list = JSON.parse(localStorage.getItem("transactions")) || [];
+    // TODO: get transactions from localstorage
+    /* if (JSON.parse(localStorage.getItem("transactions"))) {
+      transactions.value = JSON.parse(localStorage.getItem("transactions"));
+    }; */
   });
 
   function pushTransaction() {
-    if (transactionName.value === '' || transactionAmount.value === 0) {
+    if (transactionName.value === '' || transactionSum.value === 0) {
       return;
     }
-    transactions.value.list.push(
+    transactionsList.value.push(
       {
         title: transactionName.value,
-        num: parseInt(transactionAmount.value),
+        num: parseInt(transactionSum.value),
         type: transactionType.value,
       }
     );
-    localStorage.setItem("transactions", JSON.stringify(transactions.value.list));
-    console.log(transactions.value.list);
     resetFields();
+    filterTransactions();
+    localStorage.setItem("transactions", JSON.stringify(transactions.value));
     return transactions;
   };
 
+  function filterTransactions() {
+    transactions.value.forEach((transaction) => {
+      transaction.list = (transactionsList.value.filter((item) => item.type === transaction.title));
+    });
+    setAmount();
+  };
+
+  function setAmount() {
+    transactions.value.forEach((transaction) => {
+      transaction.amount = transaction.list.reduce((acc, item) => acc + item.num, 0);
+    });
+    console.log(transactions.value);
+  };
+
   function resetFields() {
-    transactionName.value = '';
-    transactionAmount.value = 0;
+    transactionName.value = 'Home';
+    transactionSum.value = 0;
+    transactionType.value = 'expense';
   };
 
   return {
-    cards,
     transactionName,
-    transactionAmount,
+    transactionSum,
     transactionType,
-    transactions,
+    transactionsList,
     pushTransaction,
+    transactions,
+    options,
   };
 }
