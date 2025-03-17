@@ -39,10 +39,11 @@ const transactions = ref([
 
 export const useTransactions = () => {
   onMounted(() => {
-    // TODO: get transactions from localstorage
-    /* if (JSON.parse(localStorage.getItem("transactions"))) {
-      transactions.value = JSON.parse(localStorage.getItem("transactions"));
-    }; */
+    filterTransactions();
+    setAmount();
+    if (JSON.parse(localStorage.getItem("transactions"))) {
+      transactionsList.value = JSON.parse(localStorage.getItem("transactions"));
+    };
   });
 
   function pushTransaction() {
@@ -56,9 +57,10 @@ export const useTransactions = () => {
         type: transactionType.value,
       }
     );
+    localStorage.setItem("transactions", JSON.stringify(transactionsList.value));
     resetFields();
     filterTransactions();
-    localStorage.setItem("transactions", JSON.stringify(transactions.value));
+    setAmount();
     return transactions;
   };
 
@@ -66,14 +68,12 @@ export const useTransactions = () => {
     transactions.value.forEach((transaction) => {
       transaction.list = (transactionsList.value.filter((item) => item.type === transaction.title));
     });
-    setAmount();
   };
 
   function setAmount() {
     transactions.value.forEach((transaction) => {
       transaction.amount = transaction.list.reduce((acc, item) => acc + item.num, 0);
     });
-    console.log(transactions.value);
   };
 
   function resetFields() {
