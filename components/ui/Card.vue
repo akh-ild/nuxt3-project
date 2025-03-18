@@ -26,5 +26,7 @@
         {{ card.label }}
       </UiButton>
     </div>
+
+    // TODO: transactions list popup
   </div>
 </template>
