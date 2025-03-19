@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue';
 const transactionName = ref('Home');
 const transactionSum = ref(0);
 const transactionType = ref('expense');
+const activeTransaction = ref({});
 const options = [
   {
     id: 0,
@@ -82,6 +83,10 @@ export const useTransactions = () => {
     transactionType.value = 'expense';
   };
 
+  function setActiveTransaction(val) {
+    activeTransaction.value = transactions.value.find(item => item.title === val);
+  };
+
   return {
     transactionName,
     transactionSum,
@@ -90,5 +95,7 @@ export const useTransactions = () => {
     pushTransaction,
     transactions,
     options,
+    setActiveTransaction,
+    activeTransaction,
   };
 }

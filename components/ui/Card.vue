@@ -1,4 +1,7 @@
 <script setup>
+  const { setPopup } = usePopup();
+  const { setActiveTransaction } = useTransactions();
+
   const props = defineProps({
     card: {
       type: Object,
@@ -9,6 +12,11 @@
       default: false
     },
   });
+
+  const onClick = (val) => {
+    setActiveTransaction(val);
+    setPopup('list');
+  };
 </script>
 
 <template>
@@ -22,11 +30,9 @@
       </div>
     </div>
     <div class="items-center px-6 py-3 flex justify-end border-t">
-      <UiButton v-if="card.label" type="primary">
+      <UiButton v-if="card.label" type="primary" @click="onClick(card.title)">
         {{ card.label }}
       </UiButton>
     </div>
-
-    // TODO: transactions list popup
   </div>
 </template>
