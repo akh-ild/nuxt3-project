@@ -4,21 +4,6 @@ const transactionName = ref('Home');
 const transactionSum = ref(0);
 const transactionType = ref('expense');
 const activeTransaction = ref({});
-const options = [
-  {
-    id: 0,
-    value: 'Home',
-  },
-  {
-    id: 1,
-    value: 'Grocery',
-  },
-  {
-    id: 2,
-    value: 'Car',
-  },
-];
-
 const transactionsList = ref([]);
 
 const transactions = ref([
@@ -94,7 +79,6 @@ export const useTransactions = () => {
     transactionsList,
     pushTransaction,
     transactions,
-    options,
     setActiveTransaction,
     activeTransaction,
   };

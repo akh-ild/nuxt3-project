@@ -1,5 +1,7 @@
 <script setup>
-  const { transactionName, transactionSum, transactionType, pushTransaction, options } = useTransactions();
+  const { transactionName, transactionSum, transactionType, pushTransaction } = useTransactions();
+  const { options } = useOptions();
+
 </script>
 
 <template>

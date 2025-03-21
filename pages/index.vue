@@ -11,9 +11,14 @@
         <h1>Dashboard</h1>
       </div>
       <!-- todo: create popup -->
-      <UiButton type="secondary" @click="setPopup('transaction')">
-        Create new transaction
-      </UiButton>
+       <div class="button-wrapper flex gap-2">
+        <UiButton type="secondary" @click="setPopup('option')">
+          Create new option
+        </UiButton>
+        <UiButton type="secondary" @click="setPopup('transaction')">
+          Create new transaction
+        </UiButton>
+       </div>
     </header>
     <main class="grid gap-4">
       <Tabs class="tabs" />

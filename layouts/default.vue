@@ -6,6 +6,7 @@
         <slot />
       </div>
       <LayoutPopupTransaction />
+      <LayoutPopupOption />
       <LayoutPopupList />
     </div>
   </div>

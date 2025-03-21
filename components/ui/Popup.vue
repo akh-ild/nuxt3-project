@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
   <div v-if="popup === name" class="popup fixed top-0 left-0 z-[999] w-full h-full flex items-center justify-center">
-    <div class="popup-content border bg-white w-[400px] h-[400px] p-[48px] z-50 relative">
+    <div class="popup-content border bg-white w-[400px] p-[48px] z-50 relative">
       <slot></slot>
       <div class="absolute right-4 top-4 cursor-pointer hover:opacity-50" @click="setPopup('')">Close</div>
     </div>

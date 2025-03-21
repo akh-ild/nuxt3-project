@@ -16,7 +16,7 @@
     </div>
     <div class="total flex gap-3 mt-3">
       <div class="title">Total</div>
-        <div class="num">{{ activeTransaction.amount }}</div>
+      <div class="num">{{ activeTransaction.amount }}</div>
     </div>
   </UiPopup>
 </template>
