@@ -1,5 +1,5 @@
 <script setup>
-  const { pushOption } = useOptions();
+  const { pushOption, optionName } = useOptions();
 
 </script>
 

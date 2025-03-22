@@ -1,6 +1,7 @@
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
-const options = [
+const optionName = ref('');
+const options = ref([
   {
     id: 0,
     value: 'Home',
@@ -13,24 +14,37 @@ const options = [
     id: 2,
     value: 'Car',
   },
-];
+]);
 
 export const useOptions = () => {
   onMounted(() => {
-    /* if (JSON.parse(localStorage.getItem("transactions"))) {
-      transactionsList.value = JSON.parse(localStorage.getItem("transactions"));
-    }; */
+    if (JSON.parse(localStorage.getItem("options"))) {
+      options.value = JSON.parse(localStorage.getItem("options"));
+    };
   });
 
   function pushOption() {
-    // if (transactionName.value === '' || transactionSum.value === 0) {
-    //   return;
-    // }
-    // localStorage.setItem("transactions", JSON.stringify(transactionsList.value));
+    if (optionName.value === '') {
+      return;
+    }
+    options.value.push(
+      {
+        id: options.value.length,
+        value: optionName.value,
+      }
+    );
+    resetFields();
+    console.log('options', options.value);
+    localStorage.setItem("options", JSON.stringify(options.value));
+  };
+
+  function resetFields() {
+    optionName.value = '';
   };
 
   return {
     options,
     pushOption,
+    optionName,
   };
 }
